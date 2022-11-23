@@ -2,7 +2,7 @@ set outfile [open "$molecule-coords.txt" w+]
 
 set molname [molinfo top get name]
 
-puts $outfile "Mol	|	Frame	|	D1a-X	D1a-Y	D1a-Z	|	D1b-X	D1b-Y	D1b-Z	|	D2-X	D2-Y	D2-Z	|	S1-X	S1-Y	S1-Z	|	S2-X	S2-Y	S2-Z	| 	 S3-X	S3-Y	S3-Z	|	S4-X	S4-Y	S4-Z	|	Zn-X	Zn-Y	Zn-Z"
+puts $outfile "Mol	|	Frame	|	D1a.X	D1a.Y	D1a.Z	|	D1b.X	D1b.Y	D1b.Z	|	D2.X	D2.Y	D2.Z	|	S1.X	S1.Y	S1.Z	|	S2.X	S2.Y	S2.Z	| 	 S3.X	S3.Y	S3.Z	|	S4.X	S4.Y	S4.Z	|	Zn.X	Zn.Y	Zn.Z"
 
 set numframes [molinfo top get numframes]
 
@@ -34,7 +34,7 @@ for {set frame 0} {${frame} < ${numframes}} {incr frame} {
 	$Zinc frame $frame
 		set Zn_comp [measure center ${Zinc} weight mass]
 
-	puts $outfile "$molname	|	$frame	|	$D1a_comp	|	$D1b_comp	|	$D2_comp	|	$S1_comp	|	$S2_comp	|	$S3_comp	|	$S4_comp	|	$Zn_comp"
+	puts $outfile "$molname	!	$frame	!	$D1a_comp	!	$D1b_comp	!	$D2_comp	!	$S1_comp	!	$S2_comp	!	$S3_comp	!	$S4_comp	!	$Zn_comp"
 
 	puts "Coords $molecule: $frame of $numframes"
 }
