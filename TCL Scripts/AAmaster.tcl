@@ -9,8 +9,8 @@ for {set i 0} { $i < [llength $trajlist] } { incr i } {
 
     if { [string match 00* $traj] } {
 
-            mol new ../RUNS/00-zmp1-c/zmp1-c.pdb
-            mol addfile ../RUNS/00-zmp1-c/zmp1-c.dcd waitfor all
+            mol new ../../221005_ZMP1/00-zmp1_closed/00_SI.psf
+            mol addfile ../../221005_ZMP1/00-zmp1_closed/00_4NPT.dcd waitfor all
 
             set molecule "ZMP1-C"
 
@@ -19,33 +19,53 @@ for {set i 0} { $i < [llength $trajlist] } { incr i } {
 
     } elseif { [string match 01* $traj] } {
 
-            mol new ../RUNS/01-zmp1-o/zmp1-o.pdb
-            mol addfile ../RUNS/01-zmp1-o/zmp1-o.dcd waitfor all
+            mol new ../../221005_ZMP1/01-zmp1_open/01_SI.psf
+            mol addfile ../../221005_ZMP1/01-zmp1_open/01_4NPT.dcd waitfor all
 
             set molecule "ZMP1-O"
 
             source zmp1_config.tcl;
             source 3Dcoords.tcl;    
-
-
     } elseif { [string match 02* $traj] } {
 
-            mol new ../RUNS/02-nep_hum-c/nep_hum-c.pdb
-            mol addfile ../RUNS/02-nep_hum-c/nep_hum-c.dcd waitfor all
+            mol new  ../../221019_NEPv/00-nepv_closed/00_SI.psf
+            mol addfile ../../221019_NEPv/00-nepv_closed/00_4NPT.dcd waitfor all
         
-            set molecule "NEP_HUM-C"
+            set molecule "NEPv-C"
 
-            source nep_hum_config.tcl;
+            source nep_config.tcl;
             source 3Dcoords.tcl;    
 
     } elseif { [string match 03* $traj] } {
 
-            mol new ../RUNS/03-nep_hum-o/nep_hum-o.pdb
-            mol addfile ../RUNS/03-nep_hum-o/nep_hum-o.dcd waitfor all
+            mol new  ../../221019_NEPv/01-nepv_open/01_SI.psf
+            mol addfile ../../221019_NEPv/01-nepv_open/01_4NPT.dcd waitfor all
 
-            set molecule "NEP_HUM-O"
 
-            source nep_hum_config.tcl;
+            set molecule "NEPv-O"
+
+            source nep_config.tcl;
+            source 3Dcoords.tcl;    
+
+    } elseif { [string match 03* $traj] } {
+
+            mol new  ../../221026_NEP/00-nep_closed/00_SI.psf
+            mol addfile ../../221026_NEP/00-nep_closed/00_3NPT.dcd waitfor all
+
+
+            set molecule "NEP-C"
+
+            source nep_config.tcl;
+            source 3Dcoords.tcl;    
+
+    } elseif { [string match 03* $traj] } {
+
+            mol new  ../../221026_NEP/01-nep_open/01_SI.psf
+            mol addfile ../../221026_NEP/01-nep_open/01_4NPT.dcd waitfor all
+
+            set molecule "NEP-O"
+
+            source nep_config.tcl;
             source 3Dcoords.tcl;    
 
     } else {

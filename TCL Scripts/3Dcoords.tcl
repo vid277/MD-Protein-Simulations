@@ -70,7 +70,7 @@ for {set frame 0} {${frame} < ${numframes}} {incr frame} {
 	$S1andS2andS4 frame $frame
 		set S1andS2andS4_comp [measure center ${S1andS2andS4} weight mass]
 
-	puts $outfile "$molname!$frame!$D1a_comp!$D1b_comp!$D1ab_comp!$D2_comp!$S1_comp!$S2_comp!$S3_comp!$S4_comp!$Zn_comp!$S1andS2_comp!$S1andS3_comp!$S1andS4_comp!$S2andS3_comp!$S2andS4_comp!$S3andS4_comp!$S1andS2andS3andS4_comp!$S1andS2andS3_comp!$S2andS3andS4_comp!$S1andS3andS4_comp!$S1andS2andS4_comp"
+	puts $outfile "$molecule!$frame!$D1a_comp!$D1b_comp!$D1ab_comp!$D2_comp!$S1_comp!$S2_comp!$S3_comp!$S4_comp!$Zn_comp!$S1andS2_comp!$S1andS3_comp!$S1andS4_comp!$S2andS3_comp!$S2andS4_comp!$S3andS4_comp!$S1andS2andS3andS4_comp!$S1andS2andS3_comp!$S2andS3andS4_comp!$S1andS3andS4_comp!$S1andS2andS4_comp"
 
 	puts "Coords $molecule: $frame of $numframes"
 }
